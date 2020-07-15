@@ -113,9 +113,10 @@ window._pcq = window._pcq || [];
 			document.getElementById("bellIcon").style.display = "none";
 		}
 
-		Notification.requestPermission().then(function(permission){
+		if (Notification.permission== "denied"){
+		    console.log(Notification.permission);
 			window.open("https://help.vwo.com/hc/en-us/articles/360007700494-How-to-unblock-notifications-from-a-website-that-you-once-blocked-", '_blank', 'width=700,height=500,left=200,top=100');			
-		});
+		}
 	        _pcq.push(['triggerOptIn']);
 	    }
 	
